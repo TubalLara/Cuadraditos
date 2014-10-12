@@ -13,7 +13,7 @@ function drop(evt) {
     var datos = evt.dataTransfer.getData("text/html");
     evt.target.appendChild(document.getElementById(datos));//con esto hacemos que se pueda meter dentro
 }
-function leerInfo() {
+function leerInfoNombre() {
     if (localStorage && localStorage["nombre"]) {
         nombre = eval(localStorage["nombre"]);
         alert(nombre);
@@ -23,7 +23,8 @@ function leerInfo() {
 };
 
 
-function escribir() {
+
+function escribirNombre() {
        var nombre = document.querySelector("#txtNombre").value;
 
        localStorage.setItem("nombre", JSON.stringify(nombre) );
@@ -31,7 +32,7 @@ function escribir() {
 
 
 };
-function borrar() {
+function borrarNombre() {
    
     localStorage.removeItem("nombre");
 
@@ -51,10 +52,10 @@ function sorpresa() {
 
 (function () {
   
-    document.querySelector("#btnGuardar").addEventListener("click", escribir, sorpresa);
-    document.querySelector("#btnBorrar").addEventListener("click", borrar);
+    document.querySelector("#btnGuardar").addEventListener("click", escribirNombre, sorpresa);
+    document.querySelector("#btnBorrar").addEventListener("click", borrarNombre);
 
-    leerInfo();
+    leerInfoNombre();
     sorpresa();
    
    
