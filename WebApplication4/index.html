@@ -2,6 +2,17 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
     <title></title>
+    <style>
+       
+
+        
+        .dropeando {
+            width: 200px;
+            height: 150px;
+            border: greenyellow double 3px;
+            display: inline-block;
+        }
+    </style>
 </head>
 <body>
     <div id="formulario">
@@ -9,6 +20,37 @@
         <input type="button" id="btnGuardar" value="Guardar" /><br />
         <input type="button" id="btnBorrar" value="Borrar Nombre" />
     </div>
+
+    <div id="capa2" style="display:inline-block;background-color:green;">
+
+        <div style="background-color:blue; display: block;">
+            Disposición A
+        </div>
+        <div style="display: block;">
+
+            <canvas id="micanvas"></canvas>
+        </div>
+       
+        <div id="dropeame1" class="dropeando">
+
+        </div>
+        <div id="dropeame2" class="dropeando">
+
+        </div>
+        <div id="dropeame3" class="dropeando">
+
+        </div>
+
+    </div>
+    <div id="formulario2" style="display:inline-block;background-color:red;">
+        <input type="number" id="coorX" placeholder="Coordenada X" /><br />
+        <input type="number" id="coorY" placeholder="Coordenada Y" /><br />
+        <input type="number" id="altura" placeholder="Altura" /><br />
+        <input type="number" id="ancho" placeholder="Ancho" /><br />
+        <input type="button" id="btnCrear" value="Crear Cuadradito" />
+    </div>
+
+
     <script src="js/js.js"></script>
 </body>
 </html>
