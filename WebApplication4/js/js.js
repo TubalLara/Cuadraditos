@@ -1,4 +1,4 @@
-﻿var url = "https://alumnos-mcsd2014.azure-mobile.net/Tables/mapas"
+﻿var url = "https://alumnos-mcsd2014.azure-mobile.net/Tables/mapas";
 var datonombre = {};
 
 
@@ -36,7 +36,7 @@ function leerInfoNombre() {
 
 var leerDatos = function () {
     
-    var urlFinal = url + "?$filter= eq " + datonombre; //url filtrado
+    var urlFinal = url + "?$filter=nombre eq '" + datonombre +"'"; //url filtrado
     var ajax = new XMLHttpRequest();
     ajax.open("GET", urlFinal);
     ajax.onreadystatechange = function () {
