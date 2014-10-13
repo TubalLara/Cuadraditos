@@ -1,5 +1,5 @@
 ﻿var url = "https://alumnos-mcsd2014.azure-mobile.net/Tables/mapas"
-
+var datonombre = {};
 
 
 function drag(evt) {
@@ -30,13 +30,13 @@ function leerInfoNombre() {
         datonombre = eval(localStorage["datonombre"]);
         alert(datonombre);
     } else {
-        alert("Introduce Nombre")
+        alert("Introduce Nombre");
     }
 };
 
 var leerDatos = function () {
     
-    var urlFinal = url + "?$filter=" + datonombre; //REVISAR LA URL QUE TENGO MAL APUNTADO HACER EL FILTRO
+    var urlFinal = url + "?$filter= eq " + datonombre; //url filtrado
     var ajax = new XMLHttpRequest();
     ajax.open("GET", urlFinal);
     ajax.onreadystatechange = function () {
@@ -64,8 +64,8 @@ var escribirDatos = function () {
     
     var json = {
         nombre: document.getElementById("datonombre").value,
-        x: document.getElementById("ncoorX").value,
-        y: document.getElementById("ncoorY").value,
+        x: document.getElementById("coorX").value,
+        y: document.getElementById("coorY").value,
         h: document.getElementById("naltura").value,
         w: document.getElementById("nancho").value
     };
@@ -110,12 +110,12 @@ function borrarNombre() {
 };
 function sorpresa() {
     if (localStorage && localStorage["datonombre"]) {
-        nombre = eval(localStorage["datonombre"]);
-        document.getElementById(capa1).style.display = "block";
+        datonombre = eval(localStorage["datonombre"]);
+        document.getElementById(formulario2).style.display = "block";
         document.getElementById(capa2).style.display = "block";
         
     } else {
-        document.getElementById(capa1).style.display = "none";
+        document.getElementById(formulario2).style.display = "none";
         document.getElementById(capa2).style.display = "none";
     }
 }
